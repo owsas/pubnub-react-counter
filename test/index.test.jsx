@@ -12,16 +12,17 @@ const pubnub = {
   unsubscribe: jest.fn(),
 };
 
-const props = { pubnub, channel: 'test' };
-const instance = new ChannelOccupancy(props);
+const minOccupancy = 1;
 
+const props = { pubnub, channel: 'test', minOccupancy };
+const instance = new ChannelOccupancy(props);
 afterEach(() => {
   jest.clearAllMocks();
 });
 
 describe('#constructor', () => {
-  test('should set the channelOccupancy to 1', () => {
-    expect(instance.state.channelOccupancy).toEqual(1);
+  test('should set the channelOccupancy to minOccupancy', () => {
+    expect(instance.state.channelOccupancy).toEqual(minOccupancy);
   });
 });
 
@@ -60,11 +61,11 @@ describe('#onPresence', () => {
     });
   });
 
-  test('should set the channelOccupancy to 1 if the occupancy received is 0', () => {
+  test('should set the channelOccupancy to minOccupancy if the occupancy received is lower', () => {
     jest.spyOn(instance, 'setState').mockImplementationOnce((s) => { instance.state = s; });
     instance.onPresence({ occupancy: 0 });
     expect(instance.setState).toHaveBeenCalledWith({
-      channelOccupancy: 1,
+      channelOccupancy: minOccupancy,
     });
   });
 });

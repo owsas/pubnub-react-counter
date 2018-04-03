@@ -3,6 +3,7 @@
 exports[`#render should match the snapshot 1`] = `
 <ChannelOccupancy
   channel="test"
+  minOccupancy={0}
   pubnub={
     Object {
       "addListener": [Function],
@@ -38,7 +39,7 @@ exports[`#render should match the snapshot 1`] = `
       </IconBase>
     </FaEye>
      
-    1
+    0
   </span>
 </ChannelOccupancy>
 `;
