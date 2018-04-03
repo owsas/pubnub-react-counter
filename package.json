@@ -1,5 +1,5 @@
 {
-  "name": "pubnub-react-counter",
+  "name": "@owsas/pubnub-react-counter",
   "version": "1.0.1",
   "description": "A channel occupancy counter for React",
   "main": "build/index.js",
