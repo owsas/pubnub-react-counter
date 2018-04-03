@@ -31,7 +31,7 @@ export default class ChannelOccupancy extends React.Component {
 
   onPresence = (event) => {
     this.setState({
-      channelOccupancy: event.occupancy || 1,
+      channelOccupancy: event.occupancy || this.props.minOccupancy,
     });
   }
 
@@ -61,7 +61,12 @@ export default class ChannelOccupancy extends React.Component {
   }
 }
 
+ChannelOccupancy.defaultProps = {
+  minOccupancy: 0,
+};
+
 ChannelOccupancy.propTypes = {
   channel: PropTypes.string.isRequired,
   pubnub: PropTypes.any.isRequired,
+  minOccupancy: PropTypes.number,
 };
