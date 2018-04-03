@@ -10,4 +10,4 @@ const pubnub = new PubNub({
   ssl: true,
 });
 
-render(<p><Index channel="test-channel" pubnub={pubnub} /> visitante(s)</p>, document.getElementById('root'));
+render(<p><Index channel="test-channel" pubnub={pubnub} /> visitor(s)</p>, document.getElementById('root'));
