@@ -8,7 +8,7 @@ export default class ChannelOccupancy extends React.Component {
     super(props);
 
     this.state = {
-      channelOccupancy: 1,
+      channelOccupancy: this.props.minOccupancy,
     };
   }
 
