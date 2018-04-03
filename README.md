@@ -1,5 +1,7 @@
 # pubnub-react-counter
 
+![](https://api.travis-ci.org/owsas/pubnub-react-counter.svg?branch=master)
+
 Count how many people are present in one pubnub channel with React.
 
 ## Demo
