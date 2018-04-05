@@ -12,6 +12,6 @@
     "transform-object-rest-spread",
     "transform-class-properties",
     "transform-async-to-generator",
-    "babel-plugin-transform-runtime"
+    "transform-runtime"
   ]
 }
